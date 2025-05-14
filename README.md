@@ -17,7 +17,7 @@ This is a simple backend project built with **FastAPI**, **SQLAlchemy**, and **S
 
 ## 🧰 Tech Stack
 
-- Python 3.10+
+- Python 3.9.1
 - FastAPI
 - SQLAlchemy
 - Alembic
