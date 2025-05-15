@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",        // <-- "main" is your main.py file, "app" is the FastAPI instance
+                "--reload"         // optional: enables autoreload
+            ],
+            "jinja": true,
+            "justMyCode": true
+        }
+    ]
+}
