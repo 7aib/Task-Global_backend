@@ -52,7 +52,7 @@ class Sale(Base, SoftDeleteMixin, TimestampMixin):
     total_price = Column(Float, nullable=False)
     sale_date = Column(DateTime, default=datetime.utcnow)
     channel = Column(
-        SQLAEnum(SalesChannel),
+        SQLAEnum(SalesChannel, name="saleschannel", native_enum=False),
         nullable=False,
         default=SalesChannel.OTHER,
     )
