@@ -1,8 +1,8 @@
-"""Added models
+"""added models
 
-Revision ID: 9d1943a56144
+Revision ID: ddc923100620
 Revises:
-Create Date: 2025-05-14 15:22:07.213952
+Create Date: 2025-05-16 16:00:56.238872
 
 """
 
@@ -13,7 +13,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = "9d1943a56144"
+revision: str = "ddc923100620"
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -82,6 +82,7 @@ def upgrade() -> None:
                 "SOCIAL_MEDIA",
                 "OTHER",
                 name="saleschannel",
+                native_enum=False,
             ),
             nullable=False,
         ),

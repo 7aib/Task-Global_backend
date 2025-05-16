@@ -54,7 +54,7 @@ class Sale(Base, SoftDeleteMixin, TimestampMixin):
     channel = Column(
         SQLAEnum(SalesChannel, name="saleschannel", native_enum=False),
         nullable=False,
-        default=SalesChannel.OTHER,
+        default=SalesChannel.OTHER.value,
     )
     customer_email = Column(String, nullable=True)
 

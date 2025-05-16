@@ -9,11 +9,13 @@ class SalesChannel(str, enum.Enum):
     SOCIAL_MEDIA = "social_media"
     OTHER = "other"
 
+
 class InventoryStatus(enum.Enum):
     IN_STOCK = "in_stock"
     OUT_OF_STOCK = "out_of_stock"
     LOW_STOCK = "low_stock"
     DISCONTINUED = "discontinued"
+
 
 class Quantity(enum.Enum):
     ONE = 1
@@ -26,3 +28,10 @@ class Quantity(enum.Enum):
     EIGHT = 8
     NINE = 9
     TEN = 10
+
+
+class SaleSummeryPeriod(enum.Enum):
+    DAILY = "daily"
+    WEEKLY = "weekly"
+    MONTHLY = "monthly"
+    ANNUAL = "annual"
