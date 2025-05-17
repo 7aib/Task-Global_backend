@@ -56,6 +56,10 @@ Apply Migrations
 ```bach
 alembic upgrade head
 ```
+Add demo data (Optional)
+```bach
+python .\scripts\demo_data.py
+```
 🧪 Run the Application (dev)
 ```bach
 fastapi dev main.py 
