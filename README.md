@@ -66,35 +66,6 @@ fastapi dev main.py
 ```
 Visit the API docs at: http://127.0.0.1:8000/docs
 
-📂 Project Structure.
-```
-├── app/
-│   ├── main.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── database.py
-│   └── ...
-├── alembic/
-│   └── versions/
-├── alembic.ini
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-
-✅ TODOs
-- Add authentication
-- Add user model
-- Dockerize the app
-- Add unit tests
-
-📄 License
-This project is licensed under the MIT License.
----
-
-
-
 
 
 
