@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime
-from enums import SalesChannel
+from enums import ChangeReason, SalesChannel
 
 
 class Config:
@@ -84,6 +84,42 @@ class SaleRead(SaleBase):
     product: Optional[ProductRead]
     created_at: Optional[datetime]
     updated_at: Optional[datetime]
+
+    class Config(Config):
+        pass
+
+
+class RevenueComparisonRead(BaseModel):
+    current_period: str
+    current_revenue: float
+    previous_period: str
+    previous_revenue: float
+    percentage_change: float
+
+    class Config(Config):
+        pass
+
+
+class LowStockRead(BaseModel):
+    id: int
+    product_id: int
+    stock: int
+    product_name: str
+
+    class Config(Config):
+        pass
+
+
+class InventoryUpdate(BaseModel):
+    stock: int
+    change_reason: ChangeReason
+
+
+class InventoryUpdateRead(BaseModel):
+    id: int
+    product_id: int
+    stock: int
+    is_deleted: bool
 
     class Config(Config):
         pass
