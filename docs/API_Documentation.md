@@ -68,6 +68,7 @@ http://<your-domain>/
   - **200 OK**: Category created successfully.
   - **422 Unprocessable Entity**: Invalid input data (e.g., missing name).
 - **Example Request**:
+
   ```
   POST http://127.0.0.1:8000/categories/
   Content-Type: application/json
@@ -77,6 +78,7 @@ http://<your-domain>/
     "description": "Gadgets and devices"
   }
   ```
+
 - **Example Response**:
   ```json
   {
@@ -158,6 +160,7 @@ http://<your-domain>/
   - **200 OK**: Product created successfully.
   - **422 Unprocessable Entity**: Invalid input data (e.g., negative price, invalid category_id).
 - **Example Request**:
+
   ```
   POST http://127.0.0.1:8000/products/
   Content-Type: application/json
@@ -169,6 +172,7 @@ http://<your-domain>/
     "category_id": 1
   }
   ```
+
 - **Example Response**:
   ```json
   {
@@ -276,6 +280,7 @@ http://<your-domain>/
   - **200 OK**: Inventory entry created successfully.
   - **422 Unprocessable Entity**: Invalid input data (e.g., negative stock, invalid product_id).
 - **Example Request**:
+
   ```
   POST http://127.0.0.1:8000/inventory/
   Content-Type: application/json
@@ -285,6 +290,7 @@ http://<your-domain>/
     "stock": 100
   }
   ```
+
 - **Example Response**:
   ```json
   {
@@ -367,6 +373,7 @@ http://<your-domain>/
   - **404 Not Found**: Product not found or soft-deleted.
   - **422 Unprocessable Entity**: Invalid input data.
 - **Example Request**:
+
   ```
   POST http://127.0.0.1:8000/sales/1
   Content-Type: application/json
@@ -376,6 +383,7 @@ http://<your-domain>/
     "customer_email": "customer@example.com"
   }
   ```
+
 - **Example Response**:
   ```json
   {
