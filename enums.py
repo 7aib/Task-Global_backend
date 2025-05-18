@@ -35,3 +35,11 @@ class SaleSummeryPeriod(enum.Enum):
     WEEKLY = "weekly"
     MONTHLY = "monthly"
     ANNUAL = "annual"
+
+
+class ChangeReason(str, enum.Enum):
+    MANUAL_ADJUSTMENT = "manual_adjustment"
+    SALE = "sale"
+    RESTOCK = "restock"
+    RETURN = "return"
+    DAMAGE = "damage"

@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Enum as SQLAEnum
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, declarative_base
 from datetime import datetime
-from enums import SalesChannel
+from enums import ChangeReason, SalesChannel
 from mixins import TimestampMixin, SoftDeleteMixin
 
 Base = declarative_base()
@@ -41,6 +41,7 @@ class Inventory(Base, SoftDeleteMixin, TimestampMixin):
     stock = Column(Integer, default=0)
 
     product = relationship("Product", back_populates="inventory")
+    logs = relationship("InventoryLog", back_populates="inventory")
 
 
 class Sale(Base, SoftDeleteMixin, TimestampMixin):
@@ -59,3 +60,20 @@ class Sale(Base, SoftDeleteMixin, TimestampMixin):
     customer_email = Column(String, nullable=True)
 
     product = relationship("Product", back_populates="sales")
+
+
+class InventoryLog(Base, SoftDeleteMixin, TimestampMixin):
+    __tablename__ = "inventory_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    inventory_id = Column(Integer, ForeignKey("inventory.id"), nullable=False)
+    old_stock = Column(Integer, nullable=False)
+    new_stock = Column(Integer, nullable=False)
+    change_reason = Column(
+        SQLAEnum(ChangeReason, name="changereason", native_enum=False),
+        nullable=False,
+        default=ChangeReason.MANUAL_ADJUSTMENT.value,
+    )
+    change_date = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    inventory = relationship("Inventory", back_populates="logs")

@@ -1,8 +1,10 @@
 class ErrorMessages:
     PRODUCT_NOT_FOUND = "Product not found"
+    PRODUCT_SOFT_DELETED = "Product is soft deleted"
     SALE_NOT_FOUND = "Sale not found"
     INVENTORY_NOT_FOUND = "Inventory item not found"
     PRODUCT_ALREADY_EXISTS = "Product already exists"
     INVENTORY_ALREADY_EXISTS = "Inventory item already exists"
     INVALID_PRODUCT_ID = "Invalid product ID"
     CATEGORY_NOT_FOUND = "Category not found"
+    STOCK_CANNOT_BE_NEGATIVE = "Stock cannot be negative"
